@@ -6,7 +6,7 @@ export class Custumer {
     private _address: Address
     private _rewardsPoints: number = 0
 
-    constructor(id: string, name: string, address: Address) {
+    constructor(id: string, name: string, address?: Address) {
         this._id = id
         this._name = name
         this._address = address
@@ -14,6 +14,10 @@ export class Custumer {
 
     addRewardsPoints(value : number){
         this._rewardsPoints += value
+    }
+
+    changeAddress(address : Address){
+        this._address = address
     }
 
     get rewardsPoints(){
