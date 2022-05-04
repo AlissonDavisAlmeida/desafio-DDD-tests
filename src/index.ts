@@ -1,7 +1,2 @@
-import { Address } from "./Domain/entities/Address"
-import { Custumer } from "./Domain/entities/Customer"
-
-const address = new Address("Av José Ayrton", 123)
-
-const customer = new Custumer("123", "Alisson", address)
-
+import { Address } from "./Domain/customer/value_objects/Address"
+import { Custumer } from "./Domain/customer/entity/Customer"

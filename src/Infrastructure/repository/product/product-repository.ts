@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize-typescript";
-import { Product } from "../../../Domain/entities/Product";
-import { ProductRepositoryInterface } from "../../../Domain/repository_interfaces/product/product_repository.interface";
+import { Product } from "../../../Domain/product/entity/Product";
+import { ProductRepositoryInterface } from "../../../Domain/product/repository/product_repository.interface";
 import { ProductModel } from "../../database/sequelize/models/product-model";
 
 
