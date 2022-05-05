@@ -1,6 +1,6 @@
 import { BelongsTo, Column, ForeignKey, Model, PrimaryKey, Table } from "sequelize-typescript";
 import { OrderModel } from "./order-model";
-import { ProductModel } from "./product-model";
+import { ProductModel } from "../../../product/sequelize/model/product-model";
 
 
 @Table({ tableName: "order_item", timestamps: false })

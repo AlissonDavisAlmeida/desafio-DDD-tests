@@ -1,6 +1,7 @@
-import { Custumer } from "../entities/Customer";
-import { Order } from "../checkout/entity/Order";
-import { OrderItem } from "../checkout/entity/OrderItem";
+import { Custumer } from "../../customer/entity/Customer"
+import { Order } from "../entity/Order"
+import { OrderItem } from "../entity/OrderItem"
+
 
 export class OrderService{
 

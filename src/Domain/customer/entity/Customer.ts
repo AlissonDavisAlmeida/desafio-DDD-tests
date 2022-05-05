@@ -1,6 +1,7 @@
 import { Address } from "../value_objects/Address"
+import { CustomerInterface } from "./customer.interface"
 
-export class Custumer {
+export class Custumer implements CustomerInterface{
     private _id: string
     private _name: string
     private _address: Address
