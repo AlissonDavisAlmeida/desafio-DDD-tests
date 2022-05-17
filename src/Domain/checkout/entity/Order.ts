@@ -16,4 +16,16 @@ export class Order {
 
         return this._items.reduce((prev, atual) => prev + atual.price, 0)
     }
+
+    get id(){
+        return this._id
+    }
+
+    get customerID(){
+        return this._customerID
+    }
+
+    get items(){
+        return this._items
+    }
 }
