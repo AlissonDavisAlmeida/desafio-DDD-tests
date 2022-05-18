@@ -38,7 +38,7 @@ describe("Test search customer use case", () => {
         await customerRepository.create(customer)
         
         const useCase = new SearchCustomer(customerRepository)
-
+        
         const input ={
             id: customer.id
         }    
