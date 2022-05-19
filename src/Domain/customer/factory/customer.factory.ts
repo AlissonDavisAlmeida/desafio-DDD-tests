@@ -10,6 +10,7 @@ export class CustomerFactory{
     }
 
     static create_with_address(name: string, address: Address){
+       
         return new Custumer("1", name, address)
     }
 }

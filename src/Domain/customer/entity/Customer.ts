@@ -8,6 +8,7 @@ export class Custumer implements CustomerInterface{
     private _rewardsPoints: number = 0
 
     constructor(id: string, name: string, address?: Address) {
+    
         this._id = id
         this._name = name
         this._address = address

@@ -1,6 +1,5 @@
 import { Custumer } from "../../../Domain/customer/entity/Customer"
 import { Address } from "../../../Domain/customer/value_objects/Address"
-import { CustomerRepository } from "../../../Infrastructure/customer/repository/customer-repository"
 import { SearchCustomer } from "./SearchCustomer.case"
 import { OutputSearchCustomerDTO } from "./search_customer.dto"
 
@@ -15,7 +14,7 @@ const MockRepository = () => {
         create: jest.fn(),
         update: jest.fn()
     }
-}   
+}
 
 describe("Test search customer use case", () => {
 
@@ -49,4 +48,24 @@ describe("Test search customer use case", () => {
         expect(result).toEqual(output)
 
     })
+
+    test("should not find a customer", async () => {
+
+        const customerRepository = MockRepository()
+        customerRepository.find.mockImplementation(() => {
+            throw new Error("Customer not found")
+        })
+        const useCase = new SearchCustomer(customerRepository)
+
+        const input = {
+            id: "123"
+        }
+
+        expect(()=>{
+            return useCase.execute(input)
+        }).rejects.toThrow("Customer not found")
+
+    })
+
+    
 })
