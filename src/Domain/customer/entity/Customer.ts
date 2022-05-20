@@ -22,6 +22,10 @@ export class Custumer implements CustomerInterface{
         this._address = address
     }
 
+    changeName(name : string){
+        this._name = name
+    }
+
     get rewardsPoints(){
         return this._rewardsPoints
     }
