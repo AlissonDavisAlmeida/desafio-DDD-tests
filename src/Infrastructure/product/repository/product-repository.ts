@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize-typescript";
 import { Product } from "../../../Domain/product/entity/Product";
+import { ProductInterface } from "../../../Domain/product/entity/product.interface";
 import { ProductRepositoryInterface } from "../../../Domain/product/repository/product_repository.interface";
 import { ProductModel } from "../sequelize/model/product-model";
 
@@ -8,7 +9,7 @@ export class ProductRepository implements ProductRepositoryInterface {
    
 
 
-    async create(entity: Product): Promise<void> {
+    async create(entity: ProductInterface): Promise<void> {
         await ProductModel.create({
             id: entity.id,
             name: entity.name,
