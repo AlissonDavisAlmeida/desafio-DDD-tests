@@ -18,8 +18,10 @@ export class ProductUpdate{
         if(!product || !input.id){
             throw new Error("Product not found")
         }
+
+        //Alteração do preço
         product.changePrice(input.price)
-        
+        product.changeName(input.name)
         await this.#productRepository.update(product)
 
 

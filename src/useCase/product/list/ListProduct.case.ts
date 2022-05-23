@@ -1,5 +1,5 @@
 import { ProductRepositoryInterface } from "../../../Domain/product/repository/product_repository.interface";
-import { OutputListProduct } from "./list_product.dto";
+import { InputListProduct, OutputListProduct } from "./list_product.dto";
 
 export class ListProducts{
 
@@ -10,7 +10,7 @@ export class ListProducts{
     }
 
 
-    async execute(): Promise<OutputListProduct>{
+    async execute(input: InputListProduct): Promise<OutputListProduct>{
 
         const result = await this.#productRepository.findAll()
         let array = result.map(product => ({

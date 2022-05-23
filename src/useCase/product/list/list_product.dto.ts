@@ -1,7 +1,6 @@
-import { CustomerInterface } from "../../../Domain/customer/entity/customer.interface";
 
 export interface InputListProduct {
-
+    input: {}
 }
 
 

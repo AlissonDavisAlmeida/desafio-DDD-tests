@@ -39,4 +39,7 @@ export class Product implements ProductInterface{
     changePrice(newPrice : number){
         this._price = newPrice
     }
+    changeName(newName : string){
+        this._name = newName
+    }
 }
