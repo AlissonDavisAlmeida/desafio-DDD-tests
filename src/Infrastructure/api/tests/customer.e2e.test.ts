@@ -92,7 +92,11 @@ describe("E2E tests for customer", () => {
         expect(listResponse.status).toEqual(200)
         expect(listResponse.body.customers.length).toEqual(2)
 
+        const customer = listResponse.body.customers[0]
+        expect(customer.name).toEqual("Alisson")
 
+        const customer2 = listResponse.body.customers[1]
+        expect(customer2.name).toEqual("Apolo")
     })
 
 })

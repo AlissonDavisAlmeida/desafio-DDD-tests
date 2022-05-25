@@ -10,7 +10,6 @@ export class ProductRepository implements ProductRepositoryInterface {
 
 
     async create(entity: ProductInterface): Promise<void> {
-        console.log(entity);
         await ProductModel.create({
             id: entity.id,
             name: entity.name,

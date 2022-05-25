@@ -17,7 +17,7 @@ export class ProductCreate{
             throw Error("Name is required")
         }
         const product = ProductFactory.create( input.name, input.price)
-
+        
         await this.#productRepository.create(product)
 
         return {
