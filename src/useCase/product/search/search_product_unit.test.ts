@@ -39,7 +39,8 @@ describe("Test search product use case", () => {
         const result = await useCase.execute(input)
 
 
-        expect(result).toEqual(output)
+        expect(result.name).toEqual(output.name)
+        expect(result.price).toEqual(output.price)
 
     })
 
