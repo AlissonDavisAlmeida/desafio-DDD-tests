@@ -58,4 +58,41 @@ describe("E2E tests for customer", () => {
 
     })
 
+    test("should list all customers", async () => {
+        const response = await request(app)
+        .post("/customers")
+        .send({
+            customer: {
+                name: "Alisson",
+                address: {
+                    street: "Av José",
+                    number: 541
+                }
+            }
+        })
+
+        expect(response.status).toEqual(200)
+       
+        const response2 = await request(app)
+        .post("/customers")
+        .send({
+            customer: {
+                name: "Apolo",
+                address: {
+                    street: "Av José Ayrton",
+                    number: 542
+                }
+            }
+        })
+
+        expect(response2.status).toEqual(200)
+
+        const listResponse = await request(app).get("/customers").send()
+
+        expect(listResponse.status).toEqual(200)
+        expect(listResponse.body.customers.length).toEqual(2)
+
+
+    })
+
 })

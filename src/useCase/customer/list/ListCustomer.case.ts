@@ -21,7 +21,6 @@ export class ListCustomer{
                 number: customer.address.number
             }
         })) 
-
         const output : OutputListCustomer = {
             customers :array
         } 
