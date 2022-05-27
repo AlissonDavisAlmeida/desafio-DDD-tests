@@ -1,17 +1,23 @@
+import { Entity } from "../../@shared/entity/entity_abstract"
+import { NotificationError } from "../../@shared/notification/notification_error"
 import { ProductInterface } from "./product.interface"
 
-export class Product implements ProductInterface{
+export class Product extends Entity implements ProductInterface{
 
-     _id: string
      _name: string
      _price: number
 
     constructor(id: string, name: string, price: number){
+        super()
         this._id = id
         this._name = name
         this._price = price
 
         this.validate()
+
+        if(this.notification.hasError()){
+            throw new NotificationError(this.notification.erros)
+        }
     }
 
     get priceProduct(): number {
@@ -20,7 +26,7 @@ export class Product implements ProductInterface{
 
     validate(){
         if(!this._id){
-            throw new Error("Id is required")
+            this.notification.addError({context:"product", message: "Id is not validate"})
         }
     }
 

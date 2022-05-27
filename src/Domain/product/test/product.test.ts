@@ -10,7 +10,7 @@ describe("Product unit tests",()=>{
 
             const product = new Product("", "Produto1", 100)
 
-        }).toThrowError("Id is required")
+        }).toThrowError("product: Id is not validate")
 
     })
 
