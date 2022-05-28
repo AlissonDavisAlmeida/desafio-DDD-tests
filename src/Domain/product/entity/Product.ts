@@ -28,6 +28,12 @@ export class Product extends Entity implements ProductInterface{
         if(!this._id){
             this.notification.addError({context:"product", message: "Id is not validate"})
         }
+        if(this._name.length === 0){
+            this.notification.addError({context:"product", message: "Name cant be empty"})
+        }
+        if(this._price <= 0){
+            this.notification.addError({context:"product", message: "Price cant be negative or zero"})
+        }
     }
 
     get name(){
