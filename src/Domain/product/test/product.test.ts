@@ -10,23 +10,20 @@ describe("Product unit tests",()=>{
 
             const product = new Product("", "Produto1", 100)
 
-        }).toThrowError("product: Id is not validate")
+        }).toThrow("product: Id is required")
 
 
         expect(()=>{
             const product = new Product("12", "", -1)
-        }).toThrowError("product: Name cant be empty")
+        }).toThrowError("product: Name is required")
 
-        expect(()=>{
-            const product = new Product("sd", "product", 0)
-        }).toThrowError("product: Price cant be negative or zero")
     })
 
     test("should throw all errors when id, name and price are invalid", () => {
 
         expect(()=>{
             const product = new Product("","", -1)
-        }).toThrowError("product: Id is not validate,product: Name cant be empty,product: Price cant be negative or zero")
+        }).toThrowError("product: Id is required,product: Name is required")
     })
 
 

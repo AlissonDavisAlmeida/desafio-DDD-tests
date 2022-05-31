@@ -12,7 +12,6 @@ customerRoute.post("/", async (req: Request, res: Response) => {
     const customerRepository = new CustomerRepository()
     const useCase = new CustomerCreateUseCase(customerRepository)
     try {
-        console.log(customer)
         const outputCustomer = await useCase.execute({
             name: customer.name,
             address: {
@@ -23,7 +22,6 @@ customerRoute.post("/", async (req: Request, res: Response) => {
 
         res.status(200).json(outputCustomer)
     } catch (err) {
-        console.log(err)
         res.status(500).json({
             message: "Error occurred while create a customer"
         })

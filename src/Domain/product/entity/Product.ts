@@ -1,5 +1,6 @@
 import { Entity } from "../../@shared/entity/entity_abstract"
 import { NotificationError } from "../../@shared/notification/notification_error"
+import { ProductValidatorFactory } from "../factory/product_validator_factory"
 import { ProductInterface } from "./product.interface"
 
 export class Product extends Entity implements ProductInterface{
@@ -25,15 +26,7 @@ export class Product extends Entity implements ProductInterface{
     }
 
     validate(){
-        if(!this._id){
-            this.notification.addError({context:"product", message: "Id is not validate"})
-        }
-        if(this._name.length === 0){
-            this.notification.addError({context:"product", message: "Name cant be empty"})
-        }
-        if(this._price <= 0){
-            this.notification.addError({context:"product", message: "Price cant be negative or zero"})
-        }
+       ProductValidatorFactory.create().validate(this)
     }
 
     get name(){

@@ -1,3 +1,5 @@
+import { CustomerValidatorFactory } from "../factory/customer_validator_factory"
+
 export class Address{
     
     private _street: string = ""
@@ -9,6 +11,7 @@ export class Address{
         this._number = number
     }
 
+    
 
     tostring(){
         return `Rua ${this._street}, Nº ${this._number}`
